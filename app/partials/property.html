@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-heading" ui-set="{'selected': '{{property.meta.exposeId}}'">
+        <h4 class=" panel-title ">{{property.description.title}} (#{{property.meta.exposeId}})</h4>
+    </div>
+    <div class="panel-body " ui-if="selected=={{property.meta.exposeId}}">
+        <div ng-repeat="picture in property.pictures"> <span ng-if="picture.isTitlePicture && picture.url "><img src="{{picture.url}} " class="picture "></span></div>
+        {{property}}
+    </div>
+</div>

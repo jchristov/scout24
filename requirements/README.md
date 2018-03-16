@@ -20,9 +20,3 @@ Task challenge
 - Show private badge if `meta.account.cwid` is not defined.
 - Insert a blank div placeholder (`red` background) in the position `6` and `13` which could represent the adverts.
 - Add a `collapsed/expand` button for every element (see right top `X` button in the mock-ups) which should collapse/expand any property in the list as can be seen in the `minimize_collapsed` / `minimized_expanded` attachments.
-
-**Solution**
-- npm install
-- npm start
-- npm test
-- npm run protractor
