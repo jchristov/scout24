@@ -1,5 +1,5 @@
 // Define application module
-angular.module('immoApp', ['immoApp.services', 'immoApp.controllers', 'mobile-angular-ui', 'ngRoute']).
+angular.module('immoApp', ['immoApp.services', 'immoApp.controllers', 'ui.bootstrap', 'ngRoute']).
 config(['$routeProvider', function($routeProvider) {
     // Define routes
     $routeProvider.when('/', {

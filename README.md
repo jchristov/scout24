@@ -26,3 +26,5 @@ Task challenge
 - npm start
 - npm test
 - npm run protractor
+
+Open: http://localhost:7777
