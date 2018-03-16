@@ -28,3 +28,4 @@ Task challenge
 - npm run protractor
 
 Open: http://localhost:7777
+See: https://www.immobilienscout24.at/resultlist?useType=RESIDENTIAL&transferType=RENT&estateType=APARTMENT&spot=Wien&region=009001&page=1&matchSubProperties=true&sort=LATEST
