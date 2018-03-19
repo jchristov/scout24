@@ -31,6 +31,6 @@
 
 Due to time constraints I have not completed the following requirements:
 
-*   Mobile responsive layout
-*   Unit tests
+*   Mobile responsive layout - _the layout currently breaks in resolutions lower than ~550px_
+*   Unit tests - _anyway currently there is nothing worth unit-testing_
 *   Collapsing/expanding behaviour
