@@ -3,7 +3,7 @@
     "private": true,
     "version": "0.0.1",
     "description": "Scout24 Development Challenge",
-    "repository": "https://github.com/angular/angular-seed",
+    "repository": "https://github.com/jchristov/scout24",
     "author": "jchristov",
     "license": "MIT",
     "devDependencies": {
