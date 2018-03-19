@@ -1,18 +1,42 @@
-<div class="panel panel-default">
-    <div class="panel-heading" ui-set="{'selected': '{{property.meta.exposeId}}'">
-        <h4 class=" panel-title ">{{property.description.title}} (#{{property.meta.exposeId}})</h4>
+<div ng-if="[6, 13].includes($index)" class="advert-item row">Some advert here</div>
+
+<div class="property-item row">
+    <div class="property-item-image pull-left">
+        <img ng-src="{{property.pictures[0].url}}" class="property-image">
+        <span ng-if="property.meta.creation.date|isNotOlderThanDays:2" class="new-badge">Neu</span>
+        <span ng-if="property.meta.privateInsertion" class="private-badge">von Privat</span>
     </div>
-    <div class="panel-body " ui-if="selected=={{property.meta.exposeId}}">
-        <div ng-repeat="picture in property.pictures"> <span ng-if="picture.isTitlePicture && picture.url "><img src="{{picture.url}} " class="picture "></span></div>
-        {{property}}
+    <div class="property-item-info pull-right">
+        <div class="property-buttons">
+            <button type="button" class="glyphicon glyphicon-remove"></button>
+            <button type="button" class="glyphicon glyphicon-star"></button>
+        </div>
+        <p class="property-title">
+            <a ng-bind-html="property.description.title" ng-href="#/expose/{{property.meta.exposeId}} " target="_blank "></a>
+        </p>
+        <div class="property-address">
+            <span ng-bind-html="property.localization.address.zip + ' ' + property.localization.address.city"></span>
+            <span ng-bind-html="', ' + property.localization.address.street + ' ' + property.localization.address.streetNumber" ng-if="property.localization.address.street"></span>
+        </div>
+    </div>
+    <div class="property-item-tags pull-right">
+        <span ng-if="property.area.numberOfBalconies > 0" class="tag">Balkon</span>
+    </div>
+    <div class="property-item-details pull-right">
+        <div class="detail">
+            <span class="label ">Fläche m²</span>
+            <div ng-bind="(property.area.primaryArea|number) || '-'" class="value"></div>
+        </div>
+        <div class="detail">
+            <span class="label">Zimmer</span>
+            <div ng-bind="(property.area.numberOfRooms|number) || '-'" class="value"></div>
+        </div>
+        <div class="detail">
+            <span class="label">Miete €</span>
+            <div ng-bind="(property.priceInformation.primaryPrice|number) || '-'" class="value"></div>
+        </div>
+        <div ng-if="property.meta.features.LOGO_ON_RESULTLIST.url" class="logo">
+            <img ng-src="{{property.meta.features.LOGO_ON_RESULTLIST.url}}">
+        </div>
     </div>
 </div>
-<!--
-<div class="result-item-info">
-    <h2><a data-ng-bind-html="::hit.description.title" data-ng-href="https://www.immobilienscout24.at/lp/topimmobilien/hoch33_1100.html" target="_blank" data-ng-click="onClick(hit)" class="webkitbox" href="https://www.immobilienscout24.at/lp/topimmobilien/hoch33_1100.html">„Hoch 33–Wohnen über den Dächern Wiens“</a></h2>
-    <p
-        class="address webkitbox"><span data-ng-bind="::hit.localization.address.zip +' '">1100 </span><span data-ng-bind="::hit.localization.address.city">Wien</span>
-        <span data-ng-bind="::', '+hit.localization.address.street +' '" data-ng-if="::hit.object.showAddress &amp;&amp; hit.localization.address.street">, Laaer-Berg-Straße </span>
-        <span data-ng-bind="::hit.localization.address.streetNumber">47 + 47a</span></p>
-</div>
-/-->

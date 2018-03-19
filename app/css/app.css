@@ -1,5 +1,196 @@
 /* app css stylesheet */
+.app {
+    font-family: Arial, sans-serif;
+    color: #454545;
+    background: #e1e3e6;
+    padding: 20px;
+}
 
-.picture {
-    width: 160px;
+.property-list a {
+    color: #1d91f8;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*** Property (/advert) item block ***/
+.property-item,
+.advert-item {
+    margin-bottom: 5px;
+    /*position: relative;*/
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.08);
+}
+.property-item:after,
+.advert-item:after {
+    clear: both;
+}
+.advert-item {
+    background-color: #ff0000;
+    height: 218px;
+    text-align: center;
+}
+
+/*** Property item image section ***/
+.property-item-image {
+    overflow: hidden;
+    position: relative;
+    height: 218px;
+    width: 328px;
+}
+.property-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+/*** Property item info section ***/
+.property-item-info {
+    width: calc(100% - 328px);
+    padding: 10px;
+}
+
+.property-item-info .property-title {
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    height: 29.77px;
+    line-height: 1.353em;
+    position: relative;
+    padding-right: 22px;
+    overflow: hidden;
+}
+.property-item-info .property-title::after {
+    content: '';
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 2em;
+    width: 4.059em;
+    height: 1.353em;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.2), #fff 70%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2), #fff 70%);
+}
+
+.property-item-info .property-address {
+    color: #454545;
+    font-size: 14pt;
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+
+.property-item-info .property-buttons {
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    float: right;
+}
+.property-item-info .property-buttons button {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    background: none;
+    color: #808080;
+    border: 1px solid #e4e4e4;
+    margin-bottom: 10px;
+}
+
+/*** Property item tags section ***/
+.property-item-tags {
+    width: calc(100% - 328px);
+    padding: 0 10px;
+    float: right;
+}
+
+.property-item-tags .tag {
+    display: inline-block;
+    min-width: 10px;
+    padding: 4px;
+    font-size: 13px;
+    font-weight: 200;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #888;
+    border-radius: 2px;
+    margin-right: 9px;
+}
+
+/*** Property item details section ***/
+.property-item-details {
+    width: calc(100% - 328px);
+    padding: 10px;
+    float: right;
+    clear: none;
+}
+
+.property-item-details .detail {
+    width: calc(33.33%);
+    padding: 8px 0;
+    font-size: 20px;
+    line-height: 1.15em;
+    float: left;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    display: block;
+    min-height: 50px;
+    border-right: 1px solid #e3e4e8;
+}
+.property-item-details .detail:last-of-type {
+    border-right: none;
+}
+
+.property-item-details .label {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    text-align: center;
+}
+
+.property-item-details .value {
+    font-size: 22px;
+    display: block;
+    text-align: center;
+}
+
+.property-item-details .logo img {
+    max-width: 150px;
+    max-height: 40px;
+    position: relative;
+    top: 50%;
+    width: auto;
+}
+
+/*** Badges ***/
+.private-badge,
+.new-badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 1;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.new-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff7500;
+}
+
+.private-badge {
+    position: absolute;
+    top: 165px;
+    right: 10px;
+    background-color: #ffc200;
 }

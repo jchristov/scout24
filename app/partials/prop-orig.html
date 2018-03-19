@@ -1,0 +1,90 @@
+<div data-ng-repeat="hit in resultlist.hits" data-hit="hit" data-on-click="saveExpose(hit)" class="result-list-item is-expose"
+    id="expose_5aa4e6423489b3ff5898718d">
+    <!---->
+    <!---->
+    <!---->
+    <div data-ng-if="isExpose() &amp;&amp; !isPremiumListing() &amp;&amp; !isMinimized() &amp;&amp; !isDeveloperPremiumListing()">
+        <div class="result-item-image">
+            <a data-ng-href="expose/5aa4e6423489b3ff5898718d" target="_self" data-ng-click="onClick(hit)" href="expose/5aa4e6423489b3ff5898718d">
+                <div class="img-wrapper">
+                    <div class="">
+                        <div class="at-throbber"></div>
+                    </div>
+                    <img data-load-image="https://pictures.immobilienscout24.de/prod.www.immobilienscout24.at/pictureserver/loadPicture?id=20625198504b4dcc92e88640913543f8"
+                        data-image-width="500" data-image-height="332" data-ng-src="https://pictures.immobilienscout24.de/prod.www.immobilienscout24.at/pictureserver/loadPicture?id=20625198504b4dcc92e88640913543f8&amp;w=500&amp;h=332"
+                        class="resultitem-img img-responsive" src="https://pictures.immobilienscout24.de/prod.www.immobilienscout24.at/pictureserver/loadPicture?id=20625198504b4dcc92e88640913543f8&amp;w=500&amp;h=332">
+                    <!---->
+                    <span data-ng-if="::hit.meta.privateInsertion" class="list-badge m-t-10">von Privat</span>
+                    <!---->
+                    <div data-ng-hide="::hit.meta.creation.date|isOlderThan:'2days'" class="new-badge img-side-left orange ng-hide">Neu</div>
+                </div>
+            </a>
+        </div>
+        <div class="result-item-info">
+            <div class="btn-group">
+                <button data-ng-click="toggleRecordState()" data-ng-class="{active:active}" data-toolbar-minimize-button="::hit">
+                    <span data-ng-class="{'i-close' : !active, 'i-plus': active}" class="i-close"></span>
+                    <!---->
+                </button>
+            </div>
+            <div class="btn-group bottom">
+                <button data-ng-click="toggleRecordState()" data-ng-class="{active:active}" data-toolbar-notice-button="::hit">
+                    <span class="i-star"></span>
+                    <!---->
+                </button>
+            </div>
+            <h2>
+                <a data-ng-href="expose/5aa4e6423489b3ff5898718d" target="_self" data-ng-bind-html="::hit.description.title"
+                    data-ng-click="onClick(hit)" class="webkitbox" href="expose/5aa4e6423489b3ff5898718d">Ruhige, sonnige 2 Zimmer mit Grünblick</a>
+            </h2>
+            <p class="address webkitbox">
+                <span data-ng-bind="::hit.localization.address.zip +' '">1180 </span>
+                <span data-ng-bind="::hit.localization.address.city">Wien</span>
+                <!---->
+                <span data-ng-bind="::', '+hit.localization.address.street +' '" data-ng-if="::hit.object.showAddress &amp;&amp; hit.localization.address.street">, Klostergasse </span>
+                <!---->
+                <span data-ng-bind="::hit.localization.address.streetNumber">19</span>
+            </p>
+        </div>
+        <div class="result-item-tags">
+            <property-badges data-expose="hit" data-count="3">
+                <!---->
+                <span data-ng-repeat="badgeCode in $ctrl.badges" data-ng-class="::(badgeCode|badge).class" class="prop-badge">Balkon</span>
+                <!---->
+            </property-badges>
+        </div>
+        <div class="result-item-details">
+            <div class="keyfact-wrapper" data-keyfacts="::hit">
+                <div data-ng-class="{'at-finance' : showFinanceLink}" class="keyfact-detail area">
+                    <span class="category">Fläche m²</span>
+                    <div data-ng-bind="::(hit.area.totalArea|number) || '-'" class="value">67</div>
+                </div>
+                <!---->
+                <div data-ng-class="{'at-finance' : showFinanceLink}" data-ng-if="::hit.type.useType==='RESIDENTIAL'" class="keyfact-detail rooms">
+                    <span data-ng-bind="::'ROOM_LABEL_'+hit.type.useType | enumMapping: 'Zimmer'" class="category">Zimmer</span>
+                    <div data-ng-bind="::hit.area.numberOfRooms|number|zeroToMinus" class="value">2</div>
+                </div>
+                <!---->
+                <!---->
+                <div data-ng-class="{'at-finance' : showFinanceLink}" class="keyfact-detail price">
+                    <!---->
+                    <div data-ng-hide="::hit.priceInformation.hasPriceOnRequest">
+                        <span data-ng-bind="::priceCategoryLabel" class="category">Miete €</span>
+                        <div data-ng-bind="::primaryPrice" class="value">890</div>
+                        <a data-ng-show="showFinanceLink" data-ng-click="openFinanceLink()" class="at-finance ng-hide">Finanzierung berechnen</a>
+                        <a data-ng-show="showInsuranceLink" data-ng-click="openInsuranceLink()"
+                            class="at-finance at-insurance mobile-hidden ng-hide">Haushaltsversicherung berechnen</a>
+                        <a data-ng-show="showInsuranceLink" data-ng-click="openInsuranceLink()"
+                            class="at-finance at-insurance mobile-only ng-hide">Versicherung berechnen</a>
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <span data-ng-if="::hit.meta.privateInsertion" class="list-badge m-t-10">von Privat</span>
+            <!---->
+            <!---->
+        </div>
+    </div>
+    <!---->
+    <!---->
+</div>
